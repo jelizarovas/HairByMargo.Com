@@ -1,3 +1,12 @@
+:root {
+  --blackboard-main: #63856a;
+  --blackboard-secondary: #3c5a40;
+  --nav-height: 100px;
+  font-family: "Work Sans", sans-serif;
+  /* --main-color: #b3d07a;
+  --second-color: #ffff8c; */
+}
+
 .v-center {
   /* background: #cfd; */
   display: flex;
@@ -40,6 +49,7 @@
   justify-content: center;
   /* border-radius: 25px; */
   box-sizing: content-box;
+  margin-bottom: 0;
 }
 
 .jumbotron > div {
@@ -70,4 +80,97 @@
   /* padding-left: 45px; */
   margin-right: 15px;
   /* background: linear-gradient(to bottom, #eeaeca 0%, #94bbe9ba 100%); */
+}
+
+ul.leaders {
+  max-width: 40em;
+  padding: 0;
+  overflow-x: hidden;
+  list-style: none;
+}
+ul.leaders li:before {
+  float: left;
+  width: 0;
+  white-space: nowrap;
+  content: ". . . . . . . . . . . . . . . . . . . . "
+    ". . . . . . . . . . . . . . . . . . . . "
+    ". . . . . . . . . . . . . . . . . . . . "
+    ". . . . . . . . . . . . . . . . . . . . ";
+}
+ul.leaders span:first-child {
+  padding-right: 0.33em;
+  background: white;
+}
+ul.leaders span + span {
+  float: right;
+  padding-left: 0.33em;
+  background: white;
+}
+
+.fill {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.fill img {
+  flex-shrink: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.greenboard {
+  background: var(--blackboard-main); /* Old browsers */
+  background: -moz-radial-gradient(
+    center,
+    ellipse cover,
+    var(--blackboard-main) 1%,
+    var(--blackboard-secondary) 100%
+  ); /* FF3.6+ */
+  background: -webkit-gradient(
+    radial,
+    center center,
+    0px,
+    center center,
+    100%,
+    color-stop(1%, var(--blackboard-main)),
+    color-stop(100%, var(--blackboard-secondary))
+  ); /* Chrome,Safari4+ */
+  background: -webkit-radial-gradient(
+    center,
+    ellipse cover,
+    var(--blackboard-main) 1%,
+    var(--blackboard-secondary) 100%
+  ); /* Chrome10+,Safari5.1+ */
+  background: -o-radial-gradient(
+    center,
+    ellipse cover,
+    var(--blackboard-main) 1%,
+    var(--blackboard-secondary) 100%
+  ); /* Opera 12+ */
+  background: -ms-radial-gradient(
+    center,
+    ellipse cover,
+    var(--blackboard-main) 1%,
+    var(--blackboard-secondary) 100%
+  ); /* IE10+ */
+  background: radial-gradient(
+    ellipse at center,
+    var(--blackboard-main) 1%,
+    var(--blackboard-secondary) 100%
+  ); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='var(--blackboard-main)', endColorstr='var(--blackboard-secondary)',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+section[id="services"] {
+  /* margin: 0; */
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.grow {
+  transition: all 0.2s ease-in-out;
+}
+.grow:hover {
+  transform: scale(1.05);
 }
