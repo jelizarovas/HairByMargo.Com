@@ -52,7 +52,32 @@
   margin-bottom: 0;
 }
 
-.jumbotron > div {
+.jumbotron-work {
+  background-color: #ffffffcc;
+  /* background: linear-gradient(to bottom, #eeaecada 0%, #94bbe9ba 100%), */
+  background: radial-gradient(
+      circle farthest-corner at 10% 20%,
+      rgba(222, 168, 248, 0.71) 0%,
+      rgba(168, 222, 248, 0.71) 21.8%,
+      rgba(189, 250, 205, 0.71) 35.6%,
+      rgba(243, 250, 189, 0.71) 52.9%,
+      rgba(250, 227, 189, 0.71) 66.8%,
+      rgba(248, 172, 172, 0.71) 90%,
+      rgba(254, 211, 252, 0.71) 99.7%
+    ),
+    url("./images/slide-04.jpg") no-repeat center center;
+  background-size: cover;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border-radius: 25px; */
+  box-sizing: content-box;
+  margin-bottom: 0;
+}
+
+.jumbotron > div,
+.jumbotron-work > div {
   background: #ffffffcc;
   margin: 50px;
   padding: 3em;
@@ -173,4 +198,48 @@ section[id="services"] {
 }
 .grow:hover {
   transform: scale(1.05);
+}
+
+.photos {
+  padding: 15px;
+  border: 1px solid #c8c8c8;
+  background-color: #fff;
+  float: left;
+}
+
+#photoDisplay {
+  /* margin-left: 50px; */
+  margin-top: 50px;
+}
+#stacked-photo-1 {
+  transform: rotate(-10deg);
+  -ms-transform: rotate(-10deg); /* IE 9 */
+  -moz-transform: rotate(-10deg); /* Firefox */
+  -webkit-transform: rotate(-10deg); /* Safari and Chrome */
+  -o-transform: rotate(-10deg); /* Opera */
+  /* position: absolute; */
+}
+
+#stacked-photo-2 {
+  top: 25px;
+  transform: rotate(10deg);
+  -ms-transform: rotate(10deg); /* IE 9 */
+  -moz-transform: rotate(10deg); /* Firefox */
+  -webkit-transform: rotate(10deg); /* Safari and Chrome */
+  -o-transform: rotate(10deg); /* Opera */
+  position: absolute;
+  left: 100px;
+  /* margin-left: -100px; */
+}
+
+#stacked-photo-3 {
+  transform: rotate(5deg);
+  -ms-transform: rotate(5deg); /* IE 9 */
+  -moz-transform: rotate(5deg); /* Firefox */
+  -webkit-transform: rotate(5deg); /* Safari and Chrome */
+  -o-transform: rotate(5deg); /* Opera */
+  top: -25px;
+  left: 70px;
+  /* margin-top: 20px; */
+  position: absolute;
 }
