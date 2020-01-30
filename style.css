@@ -201,9 +201,11 @@ section[id="services"] {
 
 .grow {
   transition: all 0.2s ease-in-out;
+  margin-bottom: 10px;
 }
 .grow:hover {
-  transform: scale(1.02);
+  transform: scale(1.05);
+  z-index: 9999;
 }
 
 #reviews {
