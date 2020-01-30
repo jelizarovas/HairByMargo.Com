@@ -50,6 +50,7 @@
     <section id="welcome">
       <div class="jumbotron">
         <div class="container justify-content-center">
+          <h1 id="platform"></h1>
           <h1 class="text-center display-5">
             Welcome to <i data-feather="scissors"></i> Salon Margo
           </h1>
@@ -755,25 +756,19 @@
           return;
         }
 
-        // size_li = $("#services-female li").length;
-        // x = 6;
+        function getPlatform() {
+          var platform = ["Win32", "Android", "iOS"];
 
-        //by default li items are hidden. below displays few li items
-        // $("#services-female li:lt(" + x + ")").show();
+          for (var i = 0; i < platform.length; i++) {
+            if (navigator.platform.indexOf(platform[i]) > -1) {
+              return platform[i];
+            }
+          }
+        }
 
-        // $("#loadMore").click(function() {
-        //   $("#services-female li:lt(" + size_li + ")").show();
-        //   $("#showLess").show();
-        //   $("#loadMore").hide();
-        // });
+        $("#platform").text(getPlatform());
 
-        // $("#showLess").click(function() {
-        //   $("#services-female li")
-        //     .not(":lt(" + x + ")")
-        //     .hide();
-        //   $("#showLess").hide();
-        //   $("#loadMore").show();
-        // });
+        // console.log("<pre>" + JSON.stringify(navigator, 0, 2) + "</pre>");
 
         if ($(window).width() < 768) {
           hideServices(4, "services-hair");
