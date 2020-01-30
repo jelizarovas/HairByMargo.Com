@@ -4,9 +4,12 @@
   "description": "business website for a hair salon",
   "main": "index.html",
   "dependencies": {
+    "imagemin": "^7.0.1"
+  },
+  "devDependencies": {
+    "imagemin-webp": "^5.1.0",
     "purgecss": "^2.0.5"
   },
-  "devDependencies": {},
   "scripts": {
     "build": "purgecss --css css/bootstrap.min.css css/style.css --content index.html --output dist/",
     "test": "echo \"Error: no test specified\" && exit 1"

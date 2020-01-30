@@ -38,7 +38,7 @@
       rgba(248, 172, 172, 0.71) 90%,
       rgba(254, 211, 252, 0.71) 99.7%
     ),
-    url("../images/slide-01.jpg") no-repeat center center;
+    url("../images/build/slide-01.webp") no-repeat center center;
   background-size: cover;
   min-height: 60vh;
   max-height: 100vh;
@@ -61,7 +61,7 @@
       rgba(248, 172, 172, 0.71) 90%,
       rgba(254, 211, 252, 0.71) 99.7%
     ),
-    url("../images/slide-04.jpg") no-repeat center center;
+    url("../images/build/slide-04.webp") no-repeat center center;
   background-size: cover;
   min-height: 600px;
   /* max-height: 100vh; */
