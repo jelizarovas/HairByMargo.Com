@@ -294,3 +294,7 @@ section[id="services"] {
 .less:hover {
   color: black;
 }
+
+.footer-social-links li {
+  padding-top: 20px;
+}
