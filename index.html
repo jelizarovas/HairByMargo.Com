@@ -50,7 +50,7 @@
     <section id="welcome">
       <div class="jumbotron">
         <div class="container justify-content-center">
-          <h1 id="platform"></h1>
+          <!-- <h1 id="platform"></h1> -->
           <h1 class="text-center display-5">
             Welcome to <i data-feather="scissors"></i> Salon Margo
           </h1>
@@ -586,7 +586,9 @@
               <br />
               <p>
                 Email me at
-                <a href="mailto:salonmargo2k17@gmail.com"
+                <a
+                  href="mailto:salonmargo2k17@gmail.com"
+                  class="platform-dependend-link"
                   >salonmargo2k17@gmail.com</a
                 >
                 or
@@ -594,6 +596,9 @@
               <br />
               <p>
                 Call/<a
+                  class="platform-dependend-link"
+                  data-phone="8605739228"
+                  data-sms="Hi, I would like to rent a chair from you."
                   href="sms:8605739228?body=Hi, I would like to rent a chair from you. "
                   >Text</a
                 >
@@ -731,8 +736,14 @@
       $(function() {
         function hideServices(showThisMany, listSelector) {
           var x = showThisMany || 6;
-          var size_li = $("#" + listSelector + " > ul li").length;
 
+          $("#" + listSelector + " > ul li")
+            .not(":lt(" + x + ")")
+            .hide();
+          $("#" + listSelector + " > .more").show();
+          $("#" + listSelector + " > .less").hide();
+
+          var size_li = $("#" + listSelector + " > ul li").length;
           if (size_li <= x) {
             $("#" + listSelector + " > .more").hide();
             $("#" + listSelector + " > ul li").show();
@@ -756,36 +767,87 @@
           return;
         }
 
-        function getPlatform() {
-          var platform = ["Win32", "Android", "iOS"];
+        // function getPlatform() {
+        //   var platform = [
+        //     "Win32",
+        //     "Android",
+        //     "iOS",
+        //     "iPhone",
+        //     "Linux x86_64" /* PixelBook */,
+        //     "MacIntel" /* ipad  */
+        //   ];
 
-          for (var i = 0; i < platform.length; i++) {
-            if (navigator.platform.indexOf(platform[i]) > -1) {
-              return platform[i];
-            }
+        //   for (var i = 0; i < platform.length; i++) {
+        //     if (navigator.platform.indexOf(platform[i]) > -1) {
+        //       return platform[i];
+        //     }
+        //   }
+        // }
+
+        function checkPlatform() {
+          var agent = navigator.userAgent.toLocaleLowerCase();
+          if (agent.includes("android")) {
+            return "android";
+          } else if (agent.includes("iphone")) {
+            return "iphone";
+          } else {
+            return "else";
           }
         }
 
-        $("#platform").text(navigator.platform);
-
         // console.log("<pre>" + JSON.stringify(navigator, 0, 2) + "</pre>");
-
-        if ($(window).width() < 768) {
-          hideServices(4, "services-hair");
-          hideServices(4, "services-color");
-        } else if ($(window).width() >= 768 && $(window).width() <= 992) {
-          hideServices(6, "services-color");
-          hideServices(6, "services-hair");
-          // do something for medium screens
-        } else if ($(window).width() > 992 && $(window).width() <= 1200) {
-          hideServices(8, "services-color");
-          hideServices(8, "services-hair");
-          // do something for big screens
-        } else {
-          hideServices(10, "services-color");
-          hideServices(10, "services-hair");
-          // do something for huge screens
+        function setServices() {
+          if ($(window).width() < 768) {
+            hideServices(3, "services-hair");
+            hideServices(3, "services-color");
+          } else if ($(window).width() >= 768 && $(window).width() <= 992) {
+            hideServices(5, "services-color");
+            hideServices(5, "services-hair");
+            // do something for medium screens
+          } else if ($(window).width() > 992 && $(window).width() <= 1200) {
+            hideServices(7, "services-color");
+            hideServices(7, "services-hair");
+            // do something for big screens
+          } else {
+            hideServices(10, "services-color");
+            hideServices(10, "services-hair");
+            // do something for huge screens
+          }
         }
+        var platform = checkPlatform();
+        setServices();
+
+        $(".platform-dependend-link").each(function(index) {
+          if (!!$(this).attr("data-sms") && !!$(this).attr("data-phone")) {
+            var smsBody = $(this).attr("data-sms");
+            var smsNr = $(this).attr("data-phone");
+
+            switch (platform) {
+              case "android":
+                var href = "sms:" + smsNr + "?body=" + smsBody;
+                $(this).attr("href", href);
+                break;
+              case "iphone":
+                var href = "sms:" + smsNr + "&body=" + smsBody;
+                $(this).attr("href", href);
+                break;
+
+              default:
+                break;
+            }
+            // console.log($(this).attr("data-sms"));
+          }
+        });
+        // console.log("---");
+        // console.log($(".platform-dependend-link").attr("data-sms"));
+
+        $(window).on("resize", function(e) {
+          clearTimeout(resizeTimer);
+          var resizeTimer = setTimeout(function() {
+            checkPlatform();
+            setServices();
+          }, 250);
+        });
       });
     </script>
   </body>
