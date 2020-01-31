@@ -12,7 +12,7 @@ const imageminWebp = require("imagemin-webp");
     destination: "images/build",
     plugins: [
       imageminWebp({
-        quality: [0.6, 0.8]
+        quality: [0.9, 0.95]
       })
     ]
   });
