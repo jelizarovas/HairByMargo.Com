@@ -389,12 +389,24 @@
         <hr />
         <div class="row justify-content-center">
           <div class="col-6 col-md-4">
-            <img
-              class="img-fluid grow img-thumbnail"
-              src="/images/build/instagram01.webp"
-              style="width: 100%;"
-              alt=""
-            />
+            <picture>
+              <source
+                srcset="
+              /images/build/instagram01.webp"
+                type="image/webp"
+              />
+              <source
+                srcset="
+              /images/instagram01.jpg"
+                type="image/jpeg"
+              />
+              <img
+                class="img-fluid grow img-thumbnail"
+                src="/images/build/instagram01.webp"
+                style="width: 100%;"
+                alt=""
+              />
+            </picture>
           </div>
           <div class="col-6 col-md-4">
             <img

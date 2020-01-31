@@ -38,7 +38,17 @@
 }
 
 .no-webp .jumbotron {
-  background: url("../images/slide-01.jpg") no-repeat center center;
+  background: radial-gradient(
+      circle farthest-corner at 10% 20%,
+      rgba(222, 168, 248, 0.71) 0%,
+      rgba(168, 222, 248, 0.71) 21.8%,
+      rgba(189, 250, 205, 0.71) 35.6%,
+      rgba(243, 250, 189, 0.71) 52.9%,
+      rgba(250, 227, 189, 0.71) 66.8%,
+      rgba(248, 172, 172, 0.71) 90%,
+      rgba(254, 211, 252, 0.71) 99.7%
+    ),
+    url("../images/slide-01.jpg") no-repeat center center;
   background-size: cover;
 }
 
