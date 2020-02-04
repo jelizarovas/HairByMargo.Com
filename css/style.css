@@ -296,7 +296,7 @@ section[id="services"] {
 }
 
 .services > ul li {
-  display: none;
+  /* display: none; */
 }
 .more {
   /* color: green; */
