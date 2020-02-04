@@ -53,8 +53,12 @@
     <script src="https://unpkg.com/feather-icons"></script>
     <title>Salon Margo - Unique hair salon located in Southington, CT</title>
   </head>
-  <body id="top">
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+  <body id="top" data-spy="scroll" data-target=".navbar" data-offset="95">
+    <nav
+      class="navbar navbar-expand-md navbar-dark bg-dark fixed-top"
+      data-spy="affix"
+      data-offset-top="95"
+    >
       <div class="container">
         <a class="navbar-brand" href="#"
           ><i
@@ -933,11 +937,7 @@
       </div>
       <!-- Copyright -->
     </footer>
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
       integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
@@ -1067,6 +1067,37 @@
             checkPlatform();
             setServices();
           }, 250);
+        });
+
+        $("body").scrollspy({ target: ".navbar", offset: 250 });
+
+        // Add smooth scrolling on all links inside the navbar
+        $("nav a").on("click", function(event) {
+          $(".navbar-collapse").collapse("hide");
+          // Make sure this.hash has a value before overriding default behavior
+          if (this.hash !== "") {
+            // Prevent default anchor click behavior
+            event.preventDefault();
+
+            // Store hash
+            var hash = this.hash;
+
+            // Using jQuery's animate() method to add smooth page scroll
+            // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+            var offset = 95;
+            // $($(this).attr("href"))[0].scrollIntoView();
+            // scrollBy(0, -offset);
+            $("html, body").animate(
+              {
+                scrollTop: $(hash).offset().top - 95
+              },
+              800,
+              function() {
+                // Add hash (#) to URL when done scrolling (default click behavior)
+                window.location.hash = hash - 95;
+              }
+            );
+          } // End if
         });
       });
     </script>

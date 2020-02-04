@@ -7,6 +7,10 @@
   --second-color: #ffff8c; */
 }
 
+body {
+  position: relative;
+}
+
 .v-center {
   /* background: #cfd; */
   display: flex;
