@@ -27,21 +27,21 @@
       name="Description"
       content="Marguerite Swan is an up and coming young entrepreneur and community activist who built her own custom salon through hard work and word of mouth recommendations. In addition to hair, she has renovated two salon spaces. Swan is a former foster child who passionately advocates for better resources and care for foster and adoptive youth. She also pushes for recognition and support for the first responders in her community. also born 11/11 Marguerite brings a joyful spark to everything she does rarely without a smile and laugh that naturally draws people in."
     />
-    <!-- <link
+    <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="style.css" /> -->
+    <!-- <link rel="stylesheet" href="style.css" /> -->
 
-    <link
+    <!-- <link
       rel="preload"
       href="dist/bootstrap.min.css"
       as="style"
       onload="this.onload=null;this.rel='stylesheet'"
     />
-    <noscript><link rel="stylesheet" href="dist/bootstrap.min.css"/></noscript>
+    <noscript><link rel="stylesheet" href="dist/bootstrap.min.css"/></noscript> -->
     <link
       rel="preload"
       href="css/style.css"
@@ -1029,23 +1029,6 @@
           return;
         }
 
-        // function getPlatform() {
-        //   var platform = [
-        //     "Win32",
-        //     "Android",
-        //     "iOS",
-        //     "iPhone",
-        //     "Linux x86_64" /* PixelBook */,
-        //     "MacIntel" /* ipad  */
-        //   ];
-
-        //   for (var i = 0; i < platform.length; i++) {
-        //     if (navigator.platform.indexOf(platform[i]) > -1) {
-        //       return platform[i];
-        //     }
-        //   }
-        // }
-
         function checkPlatform() {
           var agent = navigator.userAgent.toLocaleLowerCase();
           if (agent.includes("android")) {
@@ -1144,7 +1127,7 @@
           return false;
         });
 
-        $(window).load(function() {
+        $(window).on("load", function() {
           function goToByScroll(id) {
             $("html,body").animate({
               scrollTop: $("#" + id).offset().top - offset
