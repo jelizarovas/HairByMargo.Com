@@ -1117,33 +1117,43 @@
 
         $("body").scrollspy({ target: ".navbar", offset: 250 });
 
+        // var offset = 95;
+        var offset = $("nav").outerHeight() - 1;
+
         // Add smooth scrolling on all links inside the navbar
         $("nav a").on("click", function(event) {
           $(".navbar-collapse").collapse("hide");
-          // Make sure this.hash has a value before overriding default behavior
-          if (this.hash !== "") {
-            // Prevent default anchor click behavior
-            event.preventDefault();
+          // Prevent from default action to intitiate
+          event.preventDefault();
 
-            // Store hash
-            var hash = this.hash;
+          // The id of the section we want to go to.
+          var id = $(this)
+            .attr("href")
+            .substr(1);
 
-            // Using jQuery's animate() method to add smooth page scroll
-            // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-            var offset = 95;
-            // $($(this).attr("href"))[0].scrollIntoView();
-            // scrollBy(0, -offset);
-            $("html, body").animate(
-              {
-                scrollTop: $(hash).offset().top - 95
-              },
-              800,
-              function() {
-                // Add hash (#) to URL when done scrolling (default click behavior)
-                window.location.hash = hash - 95;
-              }
-            );
-          } // End if
+          // Our scroll target : the top position of the
+          // section that has the id referenced by our href.
+          var target = $("#" + id).offset().top - offset;
+
+          $("html, body")
+            .stop(true, true)
+            .animate({ scrollTop: target }, 500, function() {
+              window.location.hash = "!" + id;
+            });
+
+          return false;
+        });
+
+        $(window).load(function() {
+          function goToByScroll(id) {
+            $("html,body").animate({
+              scrollTop: $("#" + id).offset().top - offset
+            });
+          }
+
+          if (window.location.hash != "") {
+            goToByScroll(window.location.hash.substr(2));
+          }
         });
       });
     </script>
