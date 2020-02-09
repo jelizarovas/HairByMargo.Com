@@ -64,7 +64,7 @@
       data-offset-top="95"
     >
       <div class="container">
-        <a class="navbar-brand" href="#"
+        <a class="navbar-brand" href="#top"
           ><i
             data-feather="scissors"
             class="d-inline-block align-top"
@@ -1104,7 +1104,7 @@
         var offset = $("nav").outerHeight() - 1;
 
         // Add smooth scrolling on all links inside the navbar
-        $("nav a").on("click", function(event) {
+        $("nav a, a.navbar-brand").on("click", function(event) {
           $(".navbar-collapse").collapse("hide");
           // Prevent from default action to intitiate
           event.preventDefault();
