@@ -886,69 +886,93 @@
       </div>
     </section>
     <footer class="page-footer font-small pt-4 bg-dark text-white">
-      <div class="container text-center text-md-left">
+      <div class="container text-md-left">
         <div class="row">
           <div class="col-md-4 mt-md-0 mt-3">
-            <h5 class="text-uppercase"><i data-feather="map"></i> Location</h5>
+            <h5
+              class="text-uppercase pb-2"
+              style="border-bottom: 1px dashed white;"
+            >
+              <i data-feather="map"></i> Location
+            </h5>
 
-            <address>1079 Queen St STE #11, Southington, CT 06489</address>
-
-            <a href="http://" target="_blank" rel="noopener noreferrer">
-              <picture>
-                <source
-                  srcset="
-                /images/build/map.webp"
-                  type="image/webp"
-                />
-                <source
-                  srcset="
-                /images/map.png"
-                  type="image/png"
-                />
-                <img
-                  width="150"
-                  class="img"
-                  src="/images/build/map.webp"
-                  alt="location map"
-                />
-              </picture>
-            </a>
+            <div class="row py-1">
+              <div class="col-lg-6">
+                <address>
+                  1079 Queen St<br />
+                  STE #11,<br />
+                  Southington,<br />
+                  CT 06489
+                </address>
+              </div>
+              <div class="col-lg-6">
+                <a href="http://" target="_blank" rel="noopener noreferrer ">
+                  <picture>
+                    <source
+                      srcset="
+                    /images/build/map.webp"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                    /images/map.png"
+                      type="image/png"
+                    />
+                    <img
+                      width="150"
+                      class="img rounded"
+                      src="/images/build/map.webp"
+                      alt="location map"
+                    />
+                  </picture>
+                </a>
+              </div>
+            </div>
           </div>
 
           <hr class="clearfix w-100 d-md-none pb-3" />
 
           <div class="col-md-4 mb-md-0 mb-3">
-            <h5 class="text-uppercase">Social</h5>
-
-            <ul class="list-unstyled footer-social-links">
-              <li>
+            <h5
+              class="text-uppercase mb-0 pb-2"
+              style="border-bottom: 1px dashed white;"
+            >
+              <i data-feather="users"></i> Social
+            </h5>
+            <div class="row ">
+              <div class="col-lg-6 pt-3">
                 <a
                   href="https://www.facebook.com/salonmargo2k17"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="text-white"
-                  >Facebook</a
+                  class="text-white py-3"
+                  ><i data-feather="facebook"></i> Facebook</a
                 >
-              </li>
-              <li>
+              </div>
+              <div class="col-lg-6 py-3">
                 <a
                   href="https://www.instagram.com/explore/locations/153012735297940/united-states/southington-connecticut/salon-margo/?hl=en"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="text-white"
-                  >Instagram</a
+                  class="text-white py-3"
+                  ><i data-feather="instagram"></i> Instagram</a
                 >
-              </li>
-            </ul>
-            <h5 class="text-uppercase">Contact</h5>
+              </div>
+            </div>
+            <h5
+              class="text-uppercase mb-0 pt-4 pb-1"
+              style="border-bottom: 1px dashed white;"
+            >
+              <i data-feather="book-open"></i> Contact
+            </h5>
 
             <ul class="list-unstyled footer-social-links">
               <li>
-                Phone:
+                <i data-feather="phone" alt="Phone"></i>
                 <a href="tel:860-573-9228" class="text-white">(860) 573-9228</a>
               </li>
               <li>
-                Email:
+                <i data-feather="at-sign" alt="Email"></i>
                 <a href="mailto:salonmargo2k17@gmail.com" class="text-white">
                   salonmargo2k17@gmail.com</a
                 >
@@ -961,7 +985,10 @@
           <!-- Grid column -->
           <div class="col-md-4 mb-md-0 mb-3">
             <!-- Links -->
-            <h5 class="text-uppercase">
+            <h5
+              class="text-uppercase pb-2"
+              style="border-bottom: 1px dashed white;"
+            >
               <i data-feather="clock"></i> Open hours
             </h5>
 
@@ -989,7 +1016,7 @@
       </div>
       <!-- Footer Links -->
       <!-- Copyright -->
-      <div class="footer-copyright text-center py-3 ">
+      <div class="footer-copyright text-center py-5 text-muted">
         Salon Margo © 2020 Copyright:
         <a target="_blank" href="https://jelizarovas.com" class="text-white">
           jelizarovas.com</a
