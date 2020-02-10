@@ -73,19 +73,38 @@
           ></i>
           Salon Margo</a
         >
-        <button
-          type="button"
-          aria-label="toggle menu"
-          class="navbar-toggler"
-          data-toggle="collapse"
-          data-target="#navbarCollapse"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+        <div>
+          <a href="tel:8605739228" aria-label="Call to Set Appointment">
+            <i
+              data-feather="phone"
+              class="d-sm-inline-block d-md-none text-white mx-2"
+            ></i
+          ></a>
+          <a
+            aria-label="Open Location"
+            target="_blank"
+            rel="noopener"
+            href="https://www.google.com/maps/place/Salon+Margo/@41.6461054,-72.8749937,17z/data=!3m1!4b1!4m5!3m4!1s0x89e7ba83e34186cf:0x6b206121c02dda8d!8m2!3d41.6461054!4d-72.872805"
+          >
+            <i
+              data-feather="map-pin"
+              class="	d-sm-inline-block d-md-none text-white mx-3"
+            ></i
+          ></a>
+          <button
+            type="button"
+            aria-label="toggle menu"
+            class="navbar-toggler"
+            data-toggle="collapse"
+            data-target="#navbarCollapse"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
 
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <div class="navbar-nav ml-auto py-3 ">
-            <a href="#top" class="px-3 nav-item nav-link active">Home</a>
+            <a href="#top" class="px-3 nav-item nav-link active">Top</a>
             <a href="#services" class="px-3 nav-item nav-link">Services</a>
             <a href="#social" class="px-3 nav-item nav-link ">Gallery</a>
             <a href="#about" class="px-3 nav-item nav-link">About</a>
@@ -993,8 +1012,8 @@
     <script src="/js/modernizr-custom.js" type="text/javascript"></script>
     <script>
       feather.replace();
-
-      feather.toSvg("star", { fill: "currentColor" });
+      feather.icons["star"].toSvg({ fill: "currentColor" });
+      // feather.toSvg("star", { fill: "currentColor" });
     </script>
     <script>
       $(function() {
@@ -1106,7 +1125,7 @@
         var offset = $("nav").outerHeight() - 1;
 
         // Add smooth scrolling on all links inside the navbar
-        $("nav a, a.navbar-brand").on("click", function(event) {
+        $("nav a.nav-link, a.navbar-brand").on("click", function(event) {
           $(".navbar-collapse").collapse("hide");
           // Prevent from default action to intitiate
           event.preventDefault();
