@@ -212,6 +212,10 @@ ul.leaders li:hover {
   min-height: 100%;
 }
 
+.filled {
+  fill: currentColor;
+}
+
 section[id="services"] {
   /* margin: 0; */
   padding-top: 50px;
