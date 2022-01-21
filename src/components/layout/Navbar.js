@@ -1,16 +1,28 @@
 import React from "react";
+import { MdPhone, MdLocationPin, MdMenu } from "react-icons/md";
+
+const links = [
+  { linkId: "top", label: "Top", className: "bg-red-500 hover:bg-red-500    " },
+  { linkId: "services", label: "Services" },
+  { linkId: "social", label: "Gallery" },
+  { linkId: "about", label: "About" },
+  { linkId: "reviews", label: "Reviews" },
+  { linkId: "work", label: "Employment" },
+  { linkId: "contact", label: "Contact" },
+];
 
 export const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-md navbar-dark bg-dark fixed-top" data-spy="affix" data-offset-top="95">
-      <div className="container">
-        <a className="navbar-brand" href="#top">
-          <i data-feather="scissors" className="d-inline-block align-top" width="30" height="30"></i>
-          Salon Margo
-        </a>
-        <div>
+    <nav className="bg-gray-700 text-white flex justify-center fixed w-full py-3  ">
+      <div className="container flex items-center justify-between">
+        <div className="flex space-x-4 px-10">
+          <img src="/images/favicon/favicon-32x32.png" width="30" height="30" />
+          <span className="capitalize">Salon Margo</span>
+        </div>
+
+        <div className="lg:hidden flex space-x-8 text-white text-2xl px-10 ">
           <a href="tel:8605739228" aria-label="Call to Set Appointment">
-            <i data-feather="phone" className="d-sm-inline-block d-md-none text-white mx-2"></i>
+            <MdPhone />
           </a>
           <a
             aria-label="Open Location"
@@ -18,8 +30,9 @@ export const Navbar = () => {
             rel="noopener"
             href="https://www.google.com/maps/place/Salon+Margo/@41.6461054,-72.8749937,17z/data=!3m1!4b1!4m5!3m4!1s0x89e7ba83e34186cf:0x6b206121c02dda8d!8m2!3d41.6461054!4d-72.872805"
           >
-            <i data-feather="map-pin" className="	d-sm-inline-block d-md-none text-white mx-3"></i>
+            <MdLocationPin />
           </a>
+
           <button
             type="button"
             aria-label="toggle menu"
@@ -27,36 +40,34 @@ export const Navbar = () => {
             data-toggle="collapse"
             data-target="#navbarCollapse"
           >
-            <span className="navbar-toggler-icon"></span>
+            <MdMenu />
           </button>
         </div>
 
-        <div className="collapse navbar-collapse" id="navbarCollapse">
-          <div className="navbar-nav ml-auto py-3 ">
-            <a href="#top" className="px-3 nav-item nav-link active">
-              Top
-            </a>
-            <a href="#services" className="px-3 nav-item nav-link">
-              Services
-            </a>
-            <a href="#social" className="px-3 nav-item nav-link ">
-              Gallery
-            </a>
-            <a href="#about" className="px-3 nav-item nav-link">
-              About
-            </a>
-            <a href="#reviews" className="px-3 nav-item nav-link">
-              Reviews
-            </a>
-            <a href="#work" className="px-3 nav-item nav-link ">
-              Employment
-            </a>
-            <a href="#contact" className="px-3 nav-item nav-link ">
-              Contact
-            </a>
-          </div>
+        <div className="hidden lg:block">
+          {links.map(({ linkId, label, ...rest }) => (
+            <NavButton linkId={linkId} label={label} {...rest} />
+          ))}
         </div>
       </div>
     </nav>
+  );
+};
+
+const NavButton = ({ linkId, label, yOffset = -95, className = "" }) => {
+  return (
+    <button
+      className={
+        "cursor-pointer px-4 py-2 m-1 transition-all rounded hover:bg-indigo-500 bg-opacity-20 hover:bg-opacity-60" +
+        className
+      }
+      onClick={() => {
+        const anchor = document.querySelector(`#${linkId}`);
+        const y = anchor.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: "smooth" });
+      }}
+    >
+      {label}
+    </button>
   );
 };

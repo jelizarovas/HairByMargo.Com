@@ -2,7 +2,7 @@ import React from "react";
 
 export const Welcome = () => {
   return (
-    <section id="welcome">
+    <section id="top">
       <div className="jumbotron">
         <div className="container justify-content-center">
           <h1 className="text-center display-5 welcome-h1">
