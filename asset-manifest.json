@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/HairByMargo.Com/static/css/main.e1866d76.css",
-    "main.js": "/HairByMargo.Com/static/js/main.68aacfec.js",
+    "main.js": "/HairByMargo.Com/static/js/main.4231a5a2.js",
     "index.html": "/HairByMargo.Com/index.html",
     "main.e1866d76.css.map": "/HairByMargo.Com/static/css/main.e1866d76.css.map",
-    "main.68aacfec.js.map": "/HairByMargo.Com/static/js/main.68aacfec.js.map"
+    "main.4231a5a2.js.map": "/HairByMargo.Com/static/js/main.4231a5a2.js.map"
   },
   "entrypoints": [
     "static/css/main.e1866d76.css",
-    "static/js/main.68aacfec.js"
+    "static/js/main.4231a5a2.js"
   ]
 }
