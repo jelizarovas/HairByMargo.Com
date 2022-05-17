@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 
 import { Welcome } from "./components/Welcome";
 import { Services } from "./components/Services";
@@ -18,7 +18,7 @@ function App() {
   return (
     <div className="App bg-gray-300">
       <Navbar />
-      <BrowserRouter basename="/">
+      <HashRouter basename="/">
         <Routes>
           <Route
             exact
@@ -40,7 +40,7 @@ function App() {
             }
           />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
       <Footer />
     </div>
   );
