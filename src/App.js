@@ -18,7 +18,7 @@ function App() {
   return (
     <div className="App bg-gray-300">
       <Navbar />
-      <HashRouter basename="/">
+      <HashRouter basename="/HairByMargo.Com">
         <Routes>
           <Route
             exact
