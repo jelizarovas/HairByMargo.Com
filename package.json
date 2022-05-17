@@ -1,7 +1,7 @@
 {
   "name": "hairbymargo",
   "version": "0.0.1",
-  "homepage": "https://jelizarovas.github.io/HairByMargo.Com/",
+  "homepage": "https://jelizarovas.github.io/HairByMargo.Com",
   "private": false,
   "dependencies": {
     "@mui/material": "^5.7.0",
