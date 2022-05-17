@@ -18,3 +18,113 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
+
+.list-child {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.list-item-title {
+  /* flex: 1; */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.list-item-price {
+  white-space: nowrap;
+}
+
+.list-item-price > div {
+  text-align: center;
+  vertical-align: middle;
+  padding: 0px;
+  padding-right: 6px;
+  align-self: right;
+  display: inline-block;
+  position: relative;
+}
+
+.dots {
+  /* width: 15px; */
+  height: 1em;
+  margin: 5px;
+  border-bottom: 2px dotted #00000050;
+  flex-grow: 1;
+}
+
+ul.leaders {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.plus::after {
+  content: "+";
+  position: absolute;
+}
+.dollar::before {
+  content: "$ ";
+}
+
+ul.leaders li {
+  transition: all 0.2s ease-in-out;
+}
+
+ul.leaders li:hover {
+  cursor: pointer;
+  /* font-weight: bold; */
+  background-color: silver;
+  transition: all 0.2s ease-in-out;
+}
+
+.fill {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.fill img {
+  flex-shrink: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.filled {
+  fill: currentColor;
+}
+
+section[id="services"] {
+  /* margin: 0; */
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.grow {
+  transition: all 0.2s ease-in-out;
+  margin-bottom: 10px;
+}
+.grow:hover {
+  transform: scale(1.05);
+  z-index: 9999;
+}
+
+.services > ul li {
+  /* display: none; */
+}
+.more {
+  /* color: green; */
+  cursor: pointer;
+}
+.more:hover {
+  color: black;
+}
+.less {
+  display: none;
+  /* color: red; */
+  cursor: pointer;
+}
+.less:hover {
+  color: black;
+}

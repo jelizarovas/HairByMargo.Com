@@ -1,194 +1,64 @@
 import React from "react";
+import { MdTag } from "react-icons/md";
+
+const serviceList = [
+  {
+    name: "Just Them Hairs",
+    services: [
+      { name: "Beard Shape Up", price: "10" },
+      { name: "CLARIFY & REPAIR", price: "25" },
+      { name: "KIDS CUT", price: "20" },
+      { name: "MEN'S HAIRCUT", price: "25" },
+      { name: "WOMEN'S HAIRCUT", price: "25" },
+      { name: "WASH & STYLE", price: "25" },
+      { name: "HAIRCUT & STYLE", price: "35" },
+      { name: "FLAT IRON OR CURLS", price: "15" },
+    ],
+  },
+  {
+    name: "Color ",
+    services: [
+      { name: "Glaze", price: "20" },
+      { name: "Root", price: "40" },
+      { name: "All over Color", price: "60" },
+      { name: "Partial Highlight", price: "75" },
+      { name: "Full Highlight", price: "120" },
+      { name: "Color Correction" },
+      { name: "Keratin Smoothing Treatment", price: "75" },
+      { name: "Extensions" },
+      { name: "Additional Color Charge for Length", price: "20" },
+    ],
+  },
+];
 
 export const Services = () => {
   return (
-    <section id="services" className="bg-dark ">
-      <div className="container">
-        <h2 className="text-white text-center mb-5">
-          <i data-feather="tag"></i> Services
+    <section id="services" className="bg-slate-700 ">
+      <div className="container mx-auto">
+        <h2 className="text-white flex items-center justify-center space-x-2 mb-5 text-6xl">
+          <MdTag /> <span>Services</span>
         </h2>
-        <div className="row justify-content-center ">
-          <div className="card p-0 m-1 col-lg-5 ">
-            <div id="services-hair" className="card-body services ">
-              <h5 className="card-title text-center mb-4">- Just Them Hairs -</h5>
-              <ul className="leaders text-uppercase">
-                <li className="p-1">
-                  <div className="list-child">
-                    <div className="list-item-title">Beard Shape Up</div>
-                    <div className="dots"></div>
-                    <div className="list-item-price">
-                      <div className="dollar plus">10</div>
+        <div className="flex justify-around  ">
+          {serviceList.map((column, i) => (
+            <div key={i} id="services-hair" className="w-1/3 text-xl text-white services">
+              <h5 className="card-title text-center mb-4">- {column.name} -</h5>
+              <ul className="leaders uppercase">
+                {column.services.map((service, j) => (
+                  <li className="p-2 px-4" key={j}>
+                    <div className="list-child">
+                      <div className="list-item-title">{service.name}</div>
+                      <div className="dots"></div>
+                      <div className="list-item-price">
+                        {service?.price ? <div className="dollar plus">{service.price}</div> : "Consult"}
+                      </div>
                     </div>
-                  </div>
-                </li>
-                <li className="p-1">
-                  <div className="list-child">
-                    <div className="list-item-title">CLARIFY & REPAIR</div>
-                    <div className="dots"></div>
-                    <div className="list-item-price">
-                      <div className="dollar plus">25</div>
-                    </div>
-                  </div>
-                </li>
-                <li className="p-1">
-                  <div className="list-child">
-                    <div className="list-item-title">KIDS CUT</div>
-                    <div className="dots"></div>
-                    <div className="list-item-price">
-                      <div className="dollar plus">20</div>
-                    </div>
-                  </div>
-                </li>
-
-                <li className="p-1">
-                  <div className="list-child">
-                    <div className="list-item-title">MEN'S HAIRCUT</div>
-                    <div className="dots"></div>
-                    <div className="list-item-price">
-                      <div className="dollar plus">25</div>
-                    </div>
-                  </div>
-                </li>
-                <li className="p-1">
-                  <div className="list-child">
-                    <div className="list-item-title">WOMEN'S HAIRCUT</div>
-                    <div className="dots"></div>
-                    <div className="list-item-price">
-                      <div className="dollar plus">25</div>
-                    </div>
-                  </div>
-                </li>
-                <li className="p-1">
-                  <div className="list-child">
-                    <div className="list-item-title">WASH & STYLE</div>
-                    <div className="dots"></div>
-                    <div className="list-item-price">
-                      <div className="dollar plus">25</div>
-                    </div>
-                  </div>
-                </li>
-                <li className="p-1">
-                  <div className="list-child">
-                    <div className="list-item-title">HAIRCUT & STYLE</div>
-                    <div className="dots"></div>
-                    <div className="list-item-price">
-                      <div className="dollar plus">35</div>
-                    </div>
-                  </div>
-                </li>
-                <li className="p-1">
-                  <div className="list-child">
-                    <div className="list-item-title">FLAT IRON OR CURLS</div>
-                    <div className="dots"></div>
-                    <div className="list-item-price">
-                      <div className="dollar plus">15</div>
-                    </div>
-                  </div>
-                </li>
+                  </li>
+                ))}
               </ul>
               <div className="more float-right mt-4">See more...</div>
               <div className="less float-right mt-4">See less</div>
             </div>
-          </div>
-          <div className="card p-0 m-1 col-lg-5">
-            <div id="services-color" className="card-body services">
-              <h5 className="card-title text-center mb-4">- Color -</h5>
-              <ul className="leaders text-uppercase">
-                <li className="p-1">
-                  <div className="list-child">
-                    <div className="list-item-title">Glaze</div>
-                    <div className="dots"></div>
-                    <div className="list-item-price">
-                      <div className="dollar plus">20</div>
-                    </div>
-                  </div>
-                </li>
-                <li className="p-1">
-                  <div className="list-child">
-                    <div className="list-item-title">Root</div>
-                    <div className="dots"></div>
-                    <div className="list-item-price">
-                      <div className="dollar plus">40</div>
-                    </div>
-                  </div>
-                </li>
-                <li className="p-1">
-                  <div className="list-child">
-                    <div className="list-item-title">All Over Color</div>
-                    <div className="dots"></div>
-                    <div className="list-item-price">
-                      <div className="dollar plus">60</div>
-                    </div>
-                  </div>
-                </li>
-                <li className="p-1">
-                  <div className="list-child">
-                    <div className="list-item-title">Partial Highlight</div>
-                    <div className="dots"></div>
-                    <div className="list-item-price">
-                      <div className="dollar plus">75</div>
-                    </div>
-                  </div>
-                </li>
-                <li className="p-1">
-                  <div className="list-child">
-                    <div className="list-item-title">Full Highlight</div>
-                    <div className="dots"></div>
-                    <div className="list-item-price">
-                      <div className="dollar plus">120</div>
-                    </div>
-                  </div>
-                </li>
-                <li className="p-1">
-                  <div className="list-child">
-                    <div className="list-item-title">Color Camo for Men</div>
-                    <div className="dots"></div>
-                    <div className="list-item-price">
-                      <div className="dollar plus">25</div>
-                    </div>
-                  </div>
-                </li>
-                <li className="p-1">
-                  <div className="list-child">
-                    <div className="list-item-title">Color Correction</div>
-                    <div className="dots"></div>
-                    <div className="list-item-price">
-                      <div className="">Consult</div>
-                    </div>
-                  </div>
-                </li>
-                <li className="p-1">
-                  <div className="list-child">
-                    <div className="list-item-title">Keratin Smoothing Treatment</div>
-                    <div className="dots"></div>
-                    <div className="list-item-price">
-                      <div className="dollar plus">75</div>
-                    </div>
-                  </div>
-                </li>
-                <li className="p-1">
-                  <div className="list-child">
-                    <div className="list-item-title">Extensions</div>
-                    <div className="dots"></div>
-                    <div className="list-item-price">
-                      <div className="">Consult</div>
-                    </div>
-                  </div>
-                </li>
-                <li className="p-1">
-                  <div className="list-child">
-                    <div className="list-item-title">Additional Color Charge for Length</div>
-                    <div className="dots"></div>
-                    <div className="list-item-price">
-                      <div className="dollar">20</div>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-              <div className="more float-right mt-4">See more...</div>
-              <div className="less float-right mt-4">See less</div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

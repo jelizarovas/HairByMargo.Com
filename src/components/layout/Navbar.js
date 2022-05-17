@@ -58,7 +58,7 @@ const NavButton = ({ linkId, label, yOffset = -95, className = "" }) => {
   return (
     <button
       className={
-        "cursor-pointer px-4 py-2 m-1 transition-all rounded hover:bg-indigo-500 bg-opacity-20 hover:bg-opacity-60" +
+        "cursor-pointer px-4 py-2 m-1 transition-all rounded hover:bg-indigo-500 bg-opacity-20 hover:bg-opacity-60 " +
         className
       }
       onClick={() => {
